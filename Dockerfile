@@ -1,4 +1,5 @@
-FROM rust:1-alpine3.20 AS builder
-RUN cargo build
+FROM rust:1-alpine3.20
+WORKDIR /app
 COPY . .
-CMD [ "cargo", "run", "--bin", "ch_2-3" ]
+RUN cargo build
+CMD ["/bin/sh"]
